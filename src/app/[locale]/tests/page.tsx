@@ -15,18 +15,6 @@ export default function TestsPage() {
   // Mock data for tests
   const tests = [
     {
-      id: 'blood-test',
-      name: t('tests.bloodTest'),
-      category: 'Laboratory',
-      price: 45,
-      duration: '15 minutes',
-      description: 'Complete blood count and comprehensive metabolic panel',
-      preparation: 'Fasting for 8-12 hours recommended',
-      locations: ['Downtown Clinic', 'North Branch', 'South Medical Center'],
-      icon: '🩸',
-      featured: false
-    },
-    {
       id: 'pulmonary-function-test',
       name: 'Full Pulmonary Function Test (PFT)',
       category: 'Pulmonary',
@@ -61,67 +49,8 @@ export default function TestsPage() {
       locations: ['Downtown Clinic Sleep Center'],
       icon: '🏥',
       featured: true
-    },
-    {
-      id: 'xray',
-      name: t('tests.xray'),
-      category: 'Radiology',
-      price: 80,
-      duration: '10 minutes',
-      description: 'Digital X-ray imaging for bones and chest',
-      preparation: 'Remove all metal objects',
-      locations: ['Downtown Clinic', 'North Branch'],
-      icon: '🦴',
-      featured: false
-    },
-    {
-      id: 'mri',
-      name: t('tests.mri'),
-      category: 'Radiology',
-      price: 350,
-      duration: '45 minutes',
-      description: 'Magnetic resonance imaging for detailed body scans',
-      preparation: 'Remove all metal objects, inform staff of implants',
-      locations: ['Downtown Clinic'],
-      icon: '🧠',
-      featured: false
-    },
-    {
-      id: 'ultrasound',
-      name: t('tests.ultrasound'),
-      category: 'Radiology',
-      price: 120,
-      duration: '30 minutes',
-      description: 'Ultrasound imaging for abdominal and pelvic regions',
-      preparation: 'Full bladder required for some scans',
-      locations: ['Downtown Clinic', 'North Branch', 'South Medical Center'],
-      icon: '🔍',
-      featured: false
-    },
-    {
-      id: 'ecg',
-      name: t('tests.ecg'),
-      category: 'Cardiology',
-      price: 60,
-      duration: '20 minutes',
-      description: 'Electrocardiogram to monitor heart activity',
-      preparation: 'Avoid caffeine 2 hours before test',
-      locations: ['Downtown Clinic', 'North Branch'],
-      icon: '💓',
-      featured: false
-    },
-    {
-      id: 'ct-scan',
-      name: 'CT Scan',
-      category: 'Radiology',
-      price: 250,
-      duration: '30 minutes',
-      description: 'Computed tomography for detailed cross-sectional images',
-      preparation: 'May require contrast agent, fasting if indicated',
-      locations: ['Downtown Clinic'],
-      icon: '🔬',
-      featured: false
     }
+    
   ];
 
   const locations = ['All Locations', 'Downtown Clinic', 'North Branch', 'South Medical Center'];

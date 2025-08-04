@@ -52,6 +52,12 @@ export default function HomePage() {
               <Link href={`/${locale}/physician/signin`} className="btn-secondary">
                 Physician Portal
               </Link>
+              <Link href={`/${locale}/lab/signin`} className="btn-secondary">
+                Lab Portal
+              </Link>
+              <Link href={`/${locale}/admin/signin`} className="btn-secondary">
+                Admin Portal
+              </Link>
               <Link href={`/${locale}/auth/signin`} className="btn-secondary">
                 {t('navigation.signIn')}
               </Link>
