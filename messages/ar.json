@@ -106,6 +106,85 @@
     "submitRating": "إرسال التقييم",
     "thankYou": "شكراً لك على التقييم"
   },
+  "physician": {
+    "navigation": {
+      "dashboard": "لوحة التحكم",
+      "referrals": "الإحالات",
+      "reports": "التقارير",
+      "support": "الدعم",
+      "backToMain": "العودة للرئيسية",
+      "signOut": "تسجيل الخروج"
+    },
+    "auth": {
+      "signIn": "تسجيل دخول الطبيب",
+      "signUp": "إنشاء حساب طبيب",
+      "medicalLicense": "رقم الترخيص الطبي",
+      "licenseUpload": "رفع وثيقة الترخيص",
+      "licenseFile": "وثيقة الترخيص",
+      "verificationPending": "التحقق من الحساب قيد الانتظار",
+      "verificationApproved": "تم التحقق من الحساب",
+      "specialization": "التخصص الطبي",
+      "hospitalAffiliation": "المستشفى/العيادة المنتسب إليها",
+      "yearsOfExperience": "سنوات الخبرة"
+    },
+    "dashboard": {
+      "title": "لوحة تحكم الطبيب",
+      "welcome": "مرحباً، د.",
+      "totalReferrals": "إجمالي الإحالات",
+      "avgTurnaround": "متوسط وقت الاستجابة",
+      "pendingResults": "النتائج المعلقة",
+      "thisMonth": "هذا الشهر",
+      "recentActivity": "النشاط الأخير",
+      "quickActions": "إجراءات سريعة",
+      "newReferral": "إحالة جديدة",
+      "viewReports": "عرض التقارير",
+      "messageSupport": "مراسلة الدعم"
+    },
+    "referrals": {
+      "title": "إحالات المرضى",
+      "newReferral": "إحالة جديدة",
+      "patientName": "اسم المريض",
+      "patientId": "رقم المريض",
+      "testType": "نوع الفحص",
+      "urgency": "مستوى الأولوية",
+      "urgent": "عاجل",
+      "routine": "روتيني",
+      "notes": "ملاحظات الإحالة",
+      "submitReferral": "إرسال الإحالة",
+      "generateQR": "إنشاء رمز QR",
+      "referralCode": "رمز الإحالة",
+      "status": "الحالة",
+      "pending": "معلق",
+      "scheduled": "مجدول",
+      "inProgress": "قيد التنفيذ",
+      "completed": "مكتمل",
+      "trackReferrals": "تتبع الإحالات"
+    },
+    "reports": {
+      "title": "تقارير المرضى",
+      "searchPatient": "البحث عن مريض",
+      "filterByDate": "تصفية حسب التاريخ",
+      "filterByTest": "تصفية حسب نوع الفحص",
+      "downloadReport": "تحميل التقرير",
+      "viewDetails": "عرض التفاصيل",
+      "reportDate": "تاريخ التقرير",
+      "testResults": "نتائج الفحص",
+      "accessReports": "الوصول لتقارير المرضى"
+    },
+    "support": {
+      "title": "مركز الدعم",
+      "newMessage": "رسالة جديدة",
+      "subject": "الموضوع",
+      "message": "الرسالة",
+      "priority": "الأولوية",
+      "high": "عالية",
+      "medium": "متوسطة",
+      "low": "منخفضة",
+      "sendMessage": "إرسال الرسالة",
+      "messageHistory": "تاريخ الرسائل",
+      "contactSupport": "الاتصال بدعم هورايزن"
+    }
+  },
   "common": {
     "loading": "جارِ التحميل...",
     "error": "خطأ",
