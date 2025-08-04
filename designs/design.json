@@ -1,0 +1,183 @@
+{
+  "colors": {
+    "primary": {
+      "main": "#71C9CE",
+      "light": "#E3F4F4",
+      "dark": "#48B0B5"
+    },
+    "secondary": {
+      "main": "#6C757D",
+      "light": "#F8F9FA"
+    },
+    "background": {
+      "default": "#F8F9FA",
+      "paper": "#FFFFFF",
+      "sidebar": "rgba(255, 255, 255, 0.5)",
+      "glass": "rgba(240, 245, 248, 0.7)"
+    },
+    "text": {
+      "primary": "#212529",
+      "secondary": "#6C757D",
+      "disabled": "#ADB5BD",
+      "white": "#FFFFFF"
+    },
+    "common": {
+      "black": "#000000",
+      "white": "#FFFFFF"
+    },
+    "status": {
+      "error": {
+        "main": "#DC3545",
+        "background": "#F8D7DA"
+      },
+      "warning": {
+        "main": "#FFC107",
+        "background": "#FFF3CD"
+      },
+      "success": {
+        "main": "#198754",
+        "background": "#D1E7DD"
+      },
+      "info": {
+        "main": "#0D6EFD",
+        "background": "#CFF4FC"
+      }
+    },
+    "border": {
+      "main": "#DEE2E6",
+      "light": "#F1F3F5"
+    }
+  },
+  "typography": {
+    "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "h1": {
+      "fontSize": "2.5rem",
+      "fontWeight": 700,
+      "lineHeight": 1.2
+    },
+    "h2": {
+      "fontSize": "2rem",
+      "fontWeight": 700,
+      "lineHeight": 1.25
+    },
+    "h3": {
+      "fontSize": "1.5rem",
+      "fontWeight": 600,
+      "lineHeight": 1.3
+    },
+    "h4": {
+      "fontSize": "1.25rem",
+      "fontWeight": 600,
+      "lineHeight": 1.35
+    },
+    "body1": {
+      "fontSize": "1rem",
+      "fontWeight": 400,
+      "lineHeight": 1.5
+    },
+    "body2": {
+      "fontSize": "0.875rem",
+      "fontWeight": 400,
+      "lineHeight": 1.5
+    },
+    "caption": {
+      "fontSize": "0.75rem",
+      "fontWeight": 400,
+      "lineHeight": 1.6
+    },
+    "button": {
+      "fontSize": "0.875rem",
+      "fontWeight": 600,
+      "textTransform": "none"
+    }
+  },
+  "spacing": {
+    "base": 8,
+    "unit": "px"
+  },
+  "shape": {
+    "borderRadius": {
+      "small": "8px",
+      "medium": "16px",
+      "large": "24px",
+      "pill": "9999px",
+      "circle": "50%"
+    }
+  },
+  "shadows": {
+    "small": "0 2px 4px rgba(0,0,0,0.05)",
+    "medium": "0 4px 12px rgba(0,0,0,0.08)",
+    "large": "0 10px 30px rgba(0,0,0,0.1)"
+  },
+  "components": {
+    "button": {
+      "base": {
+        "padding": "12px 24px",
+        "borderRadius": "9999px",
+        "border": "1px solid transparent",
+        "transition": "all 0.2s ease-in-out"
+      },
+      "variants": {
+        "primary": {
+          "backgroundColor": "#000000",
+          "color": "#FFFFFF",
+          "hover": {
+            "backgroundColor": "#333333"
+          }
+        },
+        "secondary": {
+          "backgroundColor": "transparent",
+          "color": "#212529",
+          "hover": {
+            "backgroundColor": "#F1F3F5"
+          }
+        },
+        "icon": {
+          "width": "40px",
+          "height": "40px",
+          "padding": "0",
+          "borderRadius": "50%",
+          "backgroundColor": "#E3F4F4",
+          "color": "#71C9CE",
+          "hover": {
+            "backgroundColor": "#D1E9EA"
+          }
+        }
+      }
+    },
+    "card": {
+      "backgroundColor": "rgba(240, 245, 248, 0.7)",
+      "borderRadius": "24px",
+      "padding": "24px",
+      "boxShadow": "0 4px 12px rgba(0,0,0,0.08)",
+      "border": "1px solid rgba(255, 255, 255, 0.5)",
+      "backdropFilter": "blur(10px)"
+    },
+    "input": {
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": "8px",
+      "padding": "10px 16px",
+      "border": "1px solid #DEE2E6",
+      "fontSize": "0.875rem",
+      "focus": {
+        "borderColor": "#71C9CE",
+        "boxShadow": "0 0 0 3px rgba(113, 201, 206, 0.2)"
+      }
+    },
+    "tag": {
+      "borderRadius": "8px",
+      "padding": "4px 12px",
+      "fontSize": "0.75rem",
+      "fontWeight": 500
+    }
+  },
+  "layout": {
+    "container": {
+      "maxWidth": "1600px",
+      "padding": "0 32px"
+    },
+    "grid": {
+      "gap": "24px"
+    }
+  }
+}
