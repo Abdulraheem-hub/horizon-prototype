@@ -49,6 +49,9 @@ export default function HomePage() {
               >
                 {locale === 'en' ? 'العربية' : 'English'}
               </button>
+              <Link href={`/${locale}/physician/signin`} className="btn-secondary">
+                Physician Portal
+              </Link>
               <Link href={`/${locale}/auth/signin`} className="btn-secondary">
                 {t('navigation.signIn')}
               </Link>

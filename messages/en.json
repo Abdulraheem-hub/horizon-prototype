@@ -106,6 +106,85 @@
     "submitRating": "Submit Rating",
     "thankYou": "Thank you for your rating"
   },
+  "physician": {
+    "navigation": {
+      "dashboard": "Dashboard",
+      "referrals": "Referrals",
+      "reports": "Reports",
+      "support": "Support",
+      "backToMain": "Back to Main",
+      "signOut": "Sign Out"
+    },
+    "auth": {
+      "signIn": "Physician Sign In",
+      "signUp": "Create Physician Account",
+      "medicalLicense": "Medical License Number",
+      "licenseUpload": "Upload License Document",
+      "licenseFile": "License Document",
+      "verificationPending": "Account Verification Pending",
+      "verificationApproved": "Account Verified",
+      "specialization": "Medical Specialization",
+      "hospitalAffiliation": "Hospital/Clinic Affiliation",
+      "yearsOfExperience": "Years of Experience"
+    },
+    "dashboard": {
+      "title": "Physician Dashboard",
+      "welcome": "Welcome, Dr.",
+      "totalReferrals": "Total Referrals",
+      "avgTurnaround": "Avg. Turnaround Time",
+      "pendingResults": "Pending Results",
+      "thisMonth": "This Month",
+      "recentActivity": "Recent Activity",
+      "quickActions": "Quick Actions",
+      "newReferral": "New Referral",
+      "viewReports": "View Reports",
+      "messageSupport": "Message Support"
+    },
+    "referrals": {
+      "title": "Patient Referrals",
+      "newReferral": "New Referral",
+      "patientName": "Patient Name",
+      "patientId": "Patient ID",
+      "testType": "Test Type",
+      "urgency": "Urgency Level",
+      "urgent": "Urgent",
+      "routine": "Routine",
+      "notes": "Referral Notes",
+      "submitReferral": "Submit Referral",
+      "generateQR": "Generate QR Code",
+      "referralCode": "Referral Code",
+      "status": "Status",
+      "pending": "Pending",
+      "scheduled": "Scheduled",
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "trackReferrals": "Track Referrals"
+    },
+    "reports": {
+      "title": "Patient Reports",
+      "searchPatient": "Search Patient",
+      "filterByDate": "Filter by Date",
+      "filterByTest": "Filter by Test Type",
+      "downloadReport": "Download Report",
+      "viewDetails": "View Details",
+      "reportDate": "Report Date",
+      "testResults": "Test Results",
+      "accessReports": "Access Patient Reports"
+    },
+    "support": {
+      "title": "Support Center",
+      "newMessage": "New Message",
+      "subject": "Subject",
+      "message": "Message",
+      "priority": "Priority",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "sendMessage": "Send Message",
+      "messageHistory": "Message History",
+      "contactSupport": "Contact Horizon Support"
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error",
