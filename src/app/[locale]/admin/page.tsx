@@ -4,10 +4,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function AdminDashboard() {
   const params = useParams();
   const locale = params.locale as string;
+  const t = useTranslations('admin');
 
   // Mock data - in real app this would come from API
   const dashboardData = {
@@ -26,10 +28,10 @@ export default function AdminDashboard() {
 
   const analytics = {
     testTypes: [
-      { name: 'Blood Tests', count: 145, percentage: 35 },
-      { name: 'X-Rays', count: 98, percentage: 24 },
-      { name: 'MRI Scans', count: 87, percentage: 21 },
-      { name: 'Ultrasounds', count: 82, percentage: 20 },
+      { name: t('popularTests.bloodTests'), count: 145, percentage: 35 },
+      { name: t('popularTests.xrays'), count: 98, percentage: 24 },
+      { name: t('popularTests.mriScans'), count: 87, percentage: 21 },
+      { name: t('popularTests.ultrasounds'), count: 82, percentage: 20 },
     ]
   };
 
@@ -41,126 +43,126 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="px-4 py-6 sm:px-0">
+    <div className="space-y-6">
       <div className="border-b border-gray-200 pb-4">
-        <h1 className="text-2xl font-bold leading-7 text-gray-900">Admin Dashboard</h1>
+        <h1 className="text-xl sm:text-2xl font-bold leading-7 text-gray-900">{t('dashboard')}</h1>
         <p className="mt-2 text-sm text-gray-600">
-          Comprehensive overview of your Horizon platform. Manage bookings, users, labs, and view analytics.
+          {t('description')}
         </p>
       </div>
 
       {/* Stats Cards */}
-      <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Total Bookings</CardDescription>
-            <CardTitle className="text-3xl font-bold text-[#71C9CE]">
+            <CardDescription className="text-xs sm:text-sm">{t('stats.totalBookings')}</CardDescription>
+            <CardTitle className="text-2xl sm:text-3xl font-bold text-[#71C9CE]">
               {dashboardData.totalBookings}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-gray-600">All time bookings</p>
+            <p className="text-xs text-gray-600">{t('stats.totalBookingsDesc')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Active Users</CardDescription>
-            <CardTitle className="text-3xl font-bold text-blue-600">
+            <CardDescription className="text-xs sm:text-sm">{t('stats.activeUsers')}</CardDescription>
+            <CardTitle className="text-2xl sm:text-3xl font-bold text-blue-600">
               {dashboardData.activeUsers}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-gray-600">Registered users</p>
+            <p className="text-xs text-gray-600">{t('stats.activeUsersDesc')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Partner Labs</CardDescription>
-            <CardTitle className="text-3xl font-bold text-purple-600">
+            <CardDescription className="text-xs sm:text-sm">{t('stats.partnerLabs')}</CardDescription>
+            <CardTitle className="text-2xl sm:text-3xl font-bold text-purple-600">
               {dashboardData.totalLabs}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-gray-600">Active laboratory partners</p>
+            <p className="text-xs text-gray-600">{t('stats.partnerLabsDesc')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Monthly Revenue</CardDescription>
-            <CardTitle className="text-3xl font-bold text-green-600">
+            <CardDescription className="text-xs sm:text-sm">{t('stats.monthlyRevenue')}</CardDescription>
+            <CardTitle className="text-2xl sm:text-3xl font-bold text-green-600">
               {formatCurrency(dashboardData.monthlyRevenue)}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-gray-600">Current month earnings</p>
+            <p className="text-xs text-gray-600">{t('stats.monthlyRevenueDesc')}</p>
           </CardContent>
         </Card>
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-8">
-        <h2 className="text-lg font-medium text-gray-900 mb-4">Quick Actions</h2>
+      <div>
+        <h2 className="text-lg font-medium text-gray-900 mb-4">{t('quickActions.title')}</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Link href={`/${locale}/admin/bookings`}>
-            <Button className="w-full h-20 bg-[#71C9CE] hover:bg-[#48B0B5] text-white">
+            <Button className="w-full h-16 sm:h-20 bg-[#71C9CE] hover:bg-[#48B0B5] text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">Manage Bookings</div>
-                <div className="text-xs opacity-90">Override & control bookings</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.manageBookings')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.manageBookingsDesc')}</div>
               </div>
             </Button>
           </Link>
           
           <Link href={`/${locale}/admin/users`}>
-            <Button className="w-full h-20 bg-blue-500 hover:bg-blue-600 text-white">
+            <Button className="w-full h-16 sm:h-20 bg-blue-500 hover:bg-blue-600 text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">User Management</div>
-                <div className="text-xs opacity-90">Manage users & permissions</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.userManagement')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.userManagementDesc')}</div>
               </div>
             </Button>
           </Link>
           
           <Link href={`/${locale}/admin/labs`}>
-            <Button className="w-full h-20 bg-purple-500 hover:bg-purple-600 text-white">
+            <Button className="w-full h-16 sm:h-20 bg-purple-500 hover:bg-purple-600 text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">Labs & Tests</div>
-                <div className="text-xs opacity-90">Add/remove labs & tests</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.labsTests')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.labsTestsDesc')}</div>
               </div>
             </Button>
           </Link>
           
           <Link href={`/${locale}/admin/analytics`}>
-            <Button className="w-full h-20 bg-orange-500 hover:bg-orange-600 text-white">
+            <Button className="w-full h-16 sm:h-20 bg-orange-500 hover:bg-orange-600 text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">Analytics</div>
-                <div className="text-xs opacity-90">View detailed insights</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.analytics')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.analyticsDesc')}</div>
               </div>
             </Button>
           </Link>
           
           <Link href={`/${locale}/admin/reports`}>
-            <Button className="w-full h-20 bg-green-500 hover:bg-green-600 text-white">
+            <Button className="w-full h-16 sm:h-20 bg-green-500 hover:bg-green-600 text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">Financial Reports</div>
-                <div className="text-xs opacity-90">Download & export data</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.financialReports')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.financialReportsDesc')}</div>
               </div>
             </Button>
           </Link>
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Activity */}
         <div>
-          <h2 className="text-lg font-medium text-gray-900 mb-4">Recent Activity</h2>
+          <h2 className="text-lg font-medium text-gray-900 mb-4">{t('recentActivity.title')}</h2>
           <Card>
             <CardContent className="p-0">
               <div className="divide-y divide-gray-200">
                 {recentActivity.map((activity) => (
                   <div key={activity.id} className="p-4">
-                    <div className="flex items-start space-x-3">
+                    <div className="flex items-start space-x-3 rtl:space-x-reverse">
                       <div className={`flex-shrink-0 w-2 h-2 mt-2 rounded-full ${
                         activity.type === 'booking' ? 'bg-[#71C9CE]' :
                         activity.type === 'user' ? 'bg-blue-500' :
@@ -181,7 +183,7 @@ export default function AdminDashboard() {
 
         {/* Popular Test Types */}
         <div>
-          <h2 className="text-lg font-medium text-gray-900 mb-4">Popular Test Types</h2>
+          <h2 className="text-lg font-medium text-gray-900 mb-4">{t('popularTests.title')}</h2>
           <Card>
             <CardContent className="p-6">
               <div className="space-y-4">
@@ -189,7 +191,7 @@ export default function AdminDashboard() {
                   <div key={test.name}>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-600">{test.name}</span>
-                      <span className="font-medium">{test.count} tests</span>
+                      <span className="font-medium">{test.count} {t('popularTests.tests')}</span>
                     </div>
                     <div className="mt-1 bg-gray-200 rounded-full h-2">
                       <div 

@@ -185,6 +185,98 @@
       "contactSupport": "الاتصال بدعم هورايزن"
     }
   },
+  "lab": {
+    "title": "بوابة مختبر هورايزن",
+    "dashboard": "لوحة تحكم المختبر",
+    "description": "مرحباً بك في بوابة المختبر. قم بإدارة الحجوزات ورفع التقارير والتواصل مع فريق هورايزن.",
+    "navigation": {
+      "dashboard": "لوحة التحكم",
+      "bookings": "الحجوزات",
+      "reports": "التقارير",
+      "communications": "التواصل",
+      "payments": "المدفوعات",
+      "signOut": "تسجيل الخروج"
+    },
+    "stats": {
+      "todayBookings": "حجوزات اليوم",
+      "pendingReports": "التقارير المعلقة",
+      "completedTests": "الفحوصات المنجزة",
+      "messages": "الرسائل",
+      "todayBookingsDesc": "المواعيد النشطة لليوم",
+      "pendingReportsDesc": "التقارير بانتظار الرفع",
+      "completedTestsDesc": "هذا الشهر",
+      "messagesDesc": "التواصلات المعلقة"
+    },
+    "quickActions": {
+      "title": "الإجراءات السريعة",
+      "viewBookings": "عرض الحجوزات",
+      "viewBookingsDesc": "إدارة المواعيد",
+      "uploadReports": "رفع التقارير",
+      "uploadReportsDesc": "تقديم نتائج الفحوصات",
+      "messages": "الرسائل",
+      "messagesDesc": "التواصل مع الإدارة",
+      "paymentReports": "تقارير المدفوعات",
+      "paymentReportsDesc": "التسوية المالية"
+    },
+    "recentBookings": {
+      "title": "الحجوزات الأخيرة",
+      "patient": "المريض",
+      "testType": "نوع الفحص",
+      "time": "الوقت",
+      "status": "الحالة",
+      "confirmed": "مؤكد",
+      "pending": "في الانتظار",
+      "inProgress": "قيد التنفيذ"
+    }
+  },
+  "admin": {
+    "title": "لوحة إدارة هورايزن",
+    "dashboard": "لوحة تحكم الإدارة",
+    "description": "نظرة شاملة على منصة هورايزن. قم بإدارة الحجوزات والمستخدمين والمختبرات واطلع على التحليلات.",
+    "navigation": {
+      "dashboard": "لوحة التحكم",
+      "bookings": "الحجوزات",
+      "users": "المستخدمون",
+      "labs": "المختبرات والفحوصات",
+      "analytics": "التحليلات",
+      "reports": "التقارير",
+      "signOut": "تسجيل الخروج"
+    },
+    "stats": {
+      "totalBookings": "إجمالي الحجوزات",
+      "activeUsers": "المستخدمون النشطون",
+      "partnerLabs": "المختبرات الشريكة",
+      "monthlyRevenue": "الإيرادات الشهرية",
+      "totalBookingsDesc": "جميع الحجوزات",
+      "activeUsersDesc": "المستخدمون المسجلون",
+      "partnerLabsDesc": "المختبرات الشريكة النشطة",
+      "monthlyRevenueDesc": "أرباح الشهر الحالي"
+    },
+    "quickActions": {
+      "title": "الإجراءات السريعة",
+      "manageBookings": "إدارة الحجوزات",
+      "manageBookingsDesc": "التحكم في الحجوزات",
+      "userManagement": "إدارة المستخدمين",
+      "userManagementDesc": "إدارة المستخدمين والصلاحيات",
+      "labsTests": "المختبرات والفحوصات",
+      "labsTestsDesc": "إضافة/إزالة المختبرات والفحوصات",
+      "analytics": "التحليلات",
+      "analyticsDesc": "عرض التحليلات التفصيلية",
+      "financialReports": "التقارير المالية",
+      "financialReportsDesc": "تحميل وتصدير البيانات"
+    },
+    "recentActivity": {
+      "title": "النشاط الأخير"
+    },
+    "popularTests": {
+      "title": "أنواع الفحوصات الشائعة",
+      "bloodTests": "فحوصات الدم",
+      "xrays": "الأشعة السينية",
+      "mriScans": "فحوصات الرنين المغناطيسي",
+      "ultrasounds": "الموجات فوق الصوتية",
+      "tests": "فحوصات"
+    }
+  },
   "common": {
     "loading": "جارِ التحميل...",
     "error": "خطأ",

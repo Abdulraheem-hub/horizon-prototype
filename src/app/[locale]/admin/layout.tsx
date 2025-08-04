@@ -1,7 +1,8 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import Link from "next/link";
 import type { Metadata } from "next";
+import { MobileMenu } from '@/components/MobileMenu';
 
 export const metadata: Metadata = {
   title: "Admin Panel - Horizon",
@@ -19,68 +20,115 @@ export default async function AdminLayout({
 }: Props) {
   const { locale } = await params;
   const messages = await getMessages();
+  const t = await getTranslations('admin');
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       {/* Admin Navigation Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <h1 className="text-xl font-semibold text-gray-900">
-                Horizon Admin Panel
+                {t('title')}
               </h1>
             </div>
-            <nav className="flex space-x-8">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-8 rtl:space-x-reverse">
               <Link 
                 href={`/${locale}/admin`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
               >
-                Dashboard
+                {t('navigation.dashboard')}
               </Link>
               <Link 
                 href={`/${locale}/admin/bookings`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
               >
-                Bookings
+                {t('navigation.bookings')}
               </Link>
               <Link 
                 href={`/${locale}/admin/users`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
               >
-                Users
+                {t('navigation.users')}
               </Link>
               <Link 
                 href={`/${locale}/admin/labs`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
               >
-                Labs & Tests
+                {t('navigation.labs')}
               </Link>
               <Link 
                 href={`/${locale}/admin/analytics`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
               >
-                Analytics
+                {t('navigation.analytics')}
               </Link>
               <Link 
                 href={`/${locale}/admin/reports`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
               >
-                Reports
+                {t('navigation.reports')}
               </Link>
               <Link 
                 href={`/${locale}/admin/signin`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
               >
-                Sign Out
+                {t('navigation.signOut')}
               </Link>
             </nav>
+            
+            <MobileMenu>
+              <Link 
+                href={`/${locale}/admin`} 
+                className="text-gray-600 hover:text-[#71C9CE] block px-3 py-2 text-base font-medium"
+              >
+                {t('navigation.dashboard')}
+              </Link>
+              <Link 
+                href={`/${locale}/admin/bookings`} 
+                className="text-gray-600 hover:text-[#71C9CE] block px-3 py-2 text-base font-medium"
+              >
+                {t('navigation.bookings')}
+              </Link>
+              <Link 
+                href={`/${locale}/admin/users`} 
+                className="text-gray-600 hover:text-[#71C9CE] block px-3 py-2 text-base font-medium"
+              >
+                {t('navigation.users')}
+              </Link>
+              <Link 
+                href={`/${locale}/admin/labs`} 
+                className="text-gray-600 hover:text-[#71C9CE] block px-3 py-2 text-base font-medium"
+              >
+                {t('navigation.labs')}
+              </Link>
+              <Link 
+                href={`/${locale}/admin/analytics`} 
+                className="text-gray-600 hover:text-[#71C9CE] block px-3 py-2 text-base font-medium"
+              >
+                {t('navigation.analytics')}
+              </Link>
+              <Link 
+                href={`/${locale}/admin/reports`} 
+                className="text-gray-600 hover:text-[#71C9CE] block px-3 py-2 text-base font-medium"
+              >
+                {t('navigation.reports')}
+              </Link>
+              <Link 
+                href={`/${locale}/admin/signin`} 
+                className="text-gray-600 hover:text-[#71C9CE] block px-3 py-2 text-base font-medium"
+              >
+                {t('navigation.signOut')}
+              </Link>
+            </MobileMenu>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

@@ -4,10 +4,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function LabDashboard() {
   const params = useParams();
   const locale = params.locale as string;
+  const t = useTranslations('lab');
 
   // Mock data - in real app this would come from API
   const dashboardData = {
@@ -24,101 +26,101 @@ export default function LabDashboard() {
   ];
 
   return (
-    <div className="px-4 py-6 sm:px-0">
+    <div className="space-y-6">
       <div className="border-b border-gray-200 pb-4">
-        <h1 className="text-2xl font-bold leading-7 text-gray-900">Lab Dashboard</h1>
+        <h1 className="text-xl sm:text-2xl font-bold leading-7 text-gray-900">{t('dashboard')}</h1>
         <p className="mt-2 text-sm text-gray-600">
-          Welcome to your lab portal. Manage bookings, upload reports, and communicate with the Horizon team.
+          {t('description')}
         </p>
       </div>
 
       {/* Stats Cards */}
-      <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Today&apos;s Bookings</CardDescription>
-            <CardTitle className="text-3xl font-bold text-[#71C9CE]">
+            <CardDescription className="text-xs sm:text-sm">{t('stats.todayBookings')}</CardDescription>
+            <CardTitle className="text-2xl sm:text-3xl font-bold text-[#71C9CE]">
               {dashboardData.todayBookings}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-gray-600">Active appointments for today</p>
+            <p className="text-xs text-gray-600">{t('stats.todayBookingsDesc')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Pending Reports</CardDescription>
-            <CardTitle className="text-3xl font-bold text-orange-600">
+            <CardDescription className="text-xs sm:text-sm">{t('stats.pendingReports')}</CardDescription>
+            <CardTitle className="text-2xl sm:text-3xl font-bold text-orange-600">
               {dashboardData.pendingReports}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-gray-600">Reports awaiting upload</p>
+            <p className="text-xs text-gray-600">{t('stats.pendingReportsDesc')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Completed Tests</CardDescription>
-            <CardTitle className="text-3xl font-bold text-green-600">
+            <CardDescription className="text-xs sm:text-sm">{t('stats.completedTests')}</CardDescription>
+            <CardTitle className="text-2xl sm:text-3xl font-bold text-green-600">
               {dashboardData.completedTests}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-gray-600">This month</p>
+            <p className="text-xs text-gray-600">{t('stats.completedTestsDesc')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Messages</CardDescription>
-            <CardTitle className="text-3xl font-bold text-blue-600">
+            <CardDescription className="text-xs sm:text-sm">{t('stats.messages')}</CardDescription>
+            <CardTitle className="text-2xl sm:text-3xl font-bold text-blue-600">
               {dashboardData.pendingCommunications}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-gray-600">Pending communications</p>
+            <p className="text-xs text-gray-600">{t('stats.messagesDesc')}</p>
           </CardContent>
         </Card>
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-8">
-        <h2 className="text-lg font-medium text-gray-900 mb-4">Quick Actions</h2>
+      <div>
+        <h2 className="text-lg font-medium text-gray-900 mb-4">{t('quickActions.title')}</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Link href={`/${locale}/lab/bookings`}>
-            <Button className="w-full h-20 bg-[#71C9CE] hover:bg-[#48B0B5] text-white">
+            <Button className="w-full h-16 sm:h-20 bg-[#71C9CE] hover:bg-[#48B0B5] text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">View Bookings</div>
-                <div className="text-xs opacity-90">Manage appointments</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.viewBookings')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.viewBookingsDesc')}</div>
               </div>
             </Button>
           </Link>
           
           <Link href={`/${locale}/lab/reports`}>
-            <Button className="w-full h-20 bg-orange-500 hover:bg-orange-600 text-white">
+            <Button className="w-full h-16 sm:h-20 bg-orange-500 hover:bg-orange-600 text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">Upload Reports</div>
-                <div className="text-xs opacity-90">Submit test results</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.uploadReports')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.uploadReportsDesc')}</div>
               </div>
             </Button>
           </Link>
           
           <Link href={`/${locale}/lab/communications`}>
-            <Button className="w-full h-20 bg-blue-500 hover:bg-blue-600 text-white">
+            <Button className="w-full h-16 sm:h-20 bg-blue-500 hover:bg-blue-600 text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">Messages</div>
-                <div className="text-xs opacity-90">Communicate with admin</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.messages')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.messagesDesc')}</div>
               </div>
             </Button>
           </Link>
           
           <Link href={`/${locale}/lab/payments`}>
-            <Button className="w-full h-20 bg-green-500 hover:bg-green-600 text-white">
+            <Button className="w-full h-16 sm:h-20 bg-green-500 hover:bg-green-600 text-white">
               <div className="text-center">
-                <div className="text-sm font-medium">Payment Reports</div>
-                <div className="text-xs opacity-90">Financial reconciliation</div>
+                <div className="text-xs sm:text-sm font-medium">{t('quickActions.paymentReports')}</div>
+                <div className="text-xs opacity-90">{t('quickActions.paymentReportsDesc')}</div>
               </div>
             </Button>
           </Link>
@@ -126,41 +128,41 @@ export default function LabDashboard() {
       </div>
 
       {/* Recent Bookings */}
-      <div className="mt-8">
-        <h2 className="text-lg font-medium text-gray-900 mb-4">Recent Bookings</h2>
+      <div>
+        <h2 className="text-lg font-medium text-gray-900 mb-4">{t('recentBookings.title')}</h2>
         <Card>
           <CardContent className="p-0">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Patient
+                    <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {t('recentBookings.patient')}
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Test Type
+                    <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {t('recentBookings.testType')}
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Time
+                    <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {t('recentBookings.time')}
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Status
+                    <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {t('recentBookings.status')}
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {recentBookings.map((booking) => (
                     <tr key={booking.id}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                         {booking.patientName}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {booking.testType}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {booking.time}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                         <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                           booking.status === 'Confirmed' 
                             ? 'bg-green-100 text-green-800' 
@@ -168,7 +170,9 @@ export default function LabDashboard() {
                             ? 'bg-yellow-100 text-yellow-800'
                             : 'bg-blue-100 text-blue-800'
                         }`}>
-                          {booking.status}
+                          {booking.status === 'Confirmed' ? t('recentBookings.confirmed') : 
+                           booking.status === 'Pending' ? t('recentBookings.pending') : 
+                           t('recentBookings.inProgress')}
                         </span>
                       </td>
                     </tr>
