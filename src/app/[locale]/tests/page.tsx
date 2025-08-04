@@ -23,7 +23,44 @@ export default function TestsPage() {
       description: 'Complete blood count and comprehensive metabolic panel',
       preparation: 'Fasting for 8-12 hours recommended',
       locations: ['Downtown Clinic', 'North Branch', 'South Medical Center'],
-      icon: '🩸'
+      icon: '🩸',
+      featured: false
+    },
+    {
+      id: 'pulmonary-function-test',
+      name: 'Full Pulmonary Function Test (PFT)',
+      category: 'Pulmonary',
+      price: 180,
+      duration: '60 minutes',
+      description: 'Comprehensive lung function assessment including spirometry, lung volumes, and gas exchange measurements',
+      preparation: 'Avoid bronchodilators 4-6 hours before test, wear comfortable clothing, avoid heavy meals 2 hours prior',
+      locations: ['Downtown Clinic', 'North Branch'],
+      icon: '🫁',
+      featured: true
+    },
+    {
+      id: 'sleep-study-home',
+      name: 'Sleep Disorder Test (Home)',
+      category: 'Sleep Medicine',
+      price: 350,
+      duration: '8-10 hours (overnight)',
+      description: 'Home sleep apnea test using portable monitoring equipment to diagnose sleep-related breathing disorders',
+      preparation: 'Follow normal sleep routine, avoid alcohol and caffeine, maintain sleep diary for 3 days prior',
+      locations: ['Equipment pickup available at all locations'],
+      icon: '🛌',
+      featured: true
+    },
+    {
+      id: 'sleep-study-lab',
+      name: 'Sleep Disorder Test (In-Lab)',
+      category: 'Sleep Medicine',
+      price: 850,
+      duration: '10-12 hours (overnight)',
+      description: 'Comprehensive polysomnography in controlled lab environment for detailed sleep disorder diagnosis',
+      preparation: 'Bring comfortable sleepwear, avoid naps on test day, follow pre-test instructions packet',
+      locations: ['Downtown Clinic Sleep Center'],
+      icon: '🏥',
+      featured: true
     },
     {
       id: 'xray',
@@ -34,7 +71,8 @@ export default function TestsPage() {
       description: 'Digital X-ray imaging for bones and chest',
       preparation: 'Remove all metal objects',
       locations: ['Downtown Clinic', 'North Branch'],
-      icon: '🦴'
+      icon: '🦴',
+      featured: false
     },
     {
       id: 'mri',
@@ -45,7 +83,8 @@ export default function TestsPage() {
       description: 'Magnetic resonance imaging for detailed body scans',
       preparation: 'Remove all metal objects, inform staff of implants',
       locations: ['Downtown Clinic'],
-      icon: '🧠'
+      icon: '🧠',
+      featured: false
     },
     {
       id: 'ultrasound',
@@ -56,7 +95,8 @@ export default function TestsPage() {
       description: 'Ultrasound imaging for abdominal and pelvic regions',
       preparation: 'Full bladder required for some scans',
       locations: ['Downtown Clinic', 'North Branch', 'South Medical Center'],
-      icon: '🔍'
+      icon: '🔍',
+      featured: false
     },
     {
       id: 'ecg',
@@ -67,7 +107,8 @@ export default function TestsPage() {
       description: 'Electrocardiogram to monitor heart activity',
       preparation: 'Avoid caffeine 2 hours before test',
       locations: ['Downtown Clinic', 'North Branch'],
-      icon: '💓'
+      icon: '💓',
+      featured: false
     },
     {
       id: 'ct-scan',
@@ -78,12 +119,13 @@ export default function TestsPage() {
       description: 'Computed tomography for detailed cross-sectional images',
       preparation: 'May require contrast agent, fasting if indicated',
       locations: ['Downtown Clinic'],
-      icon: '🔬'
+      icon: '🔬',
+      featured: false
     }
   ];
 
   const locations = ['All Locations', 'Downtown Clinic', 'North Branch', 'South Medical Center'];
-  const categories = ['All Categories', 'Laboratory', 'Radiology', 'Cardiology'];
+  const categories = ['All Categories', 'Laboratory', 'Radiology', 'Cardiology', 'Pulmonary', 'Sleep Medicine'];
 
   const filteredTests = tests.filter(test => {
     const matchesSearch = test.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

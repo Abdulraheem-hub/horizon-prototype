@@ -82,55 +82,55 @@ export default function HomePage() {
         {/* Featured Tests */}
         <div className="mt-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Popular Tests
+            MVP Diagnostic Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Blood Test Card */}
-            <div className="card">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                  <span className="text-red-600 text-xl">🩸</span>
-                </div>
-                <h3 className="text-xl font-semibold ml-4">{t('tests.bloodTest')}</h3>
-              </div>
-              <p className="text-gray-600 mb-4">Complete blood count and analysis</p>
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-primary">$45</span>
-                <Link href={`/${locale}/tests/blood-test`} className="btn-primary">
-                  {t('tests.bookNow')}
-                </Link>
-              </div>
-            </div>
-
-            {/* X-Ray Card */}
+            {/* Pulmonary Function Test Card */}
             <div className="card">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 text-xl">🦴</span>
+                  <span className="text-blue-600 text-xl">🫁</span>
                 </div>
-                <h3 className="text-xl font-semibold ml-4">{t('tests.xray')}</h3>
+                <h3 className="text-xl font-semibold ml-4">Full Pulmonary Function Test</h3>
               </div>
-              <p className="text-gray-600 mb-4">Digital X-ray imaging</p>
+              <p className="text-gray-600 mb-4">Comprehensive lung function assessment including spirometry and gas exchange</p>
               <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-primary">$80</span>
-                <Link href={`/${locale}/tests/xray`} className="btn-primary">
+                <span className="text-lg font-bold text-primary">$180</span>
+                <Link href={`/${locale}/tests/pulmonary-function-test`} className="btn-primary">
                   {t('tests.bookNow')}
                 </Link>
               </div>
             </div>
 
-            {/* ECG Card */}
+            {/* Sleep Study Home Card */}
+            <div className="card">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                  <span className="text-purple-600 text-xl">🛌</span>
+                </div>
+                <h3 className="text-xl font-semibold ml-4">Sleep Study (Home)</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Home sleep apnea test with portable monitoring equipment</p>
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-bold text-primary">$350</span>
+                <Link href={`/${locale}/tests/sleep-study-home`} className="btn-primary">
+                  {t('tests.bookNow')}
+                </Link>
+              </div>
+            </div>
+
+            {/* Sleep Study In-Lab Card */}
             <div className="card">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <span className="text-green-600 text-xl">💓</span>
+                  <span className="text-green-600 text-xl">🏥</span>
                 </div>
-                <h3 className="text-xl font-semibold ml-4">{t('tests.ecg')}</h3>
+                <h3 className="text-xl font-semibold ml-4">Sleep Study (In-Lab)</h3>
               </div>
-              <p className="text-gray-600 mb-4">Electrocardiogram test</p>
+              <p className="text-gray-600 mb-4">Comprehensive polysomnography in controlled lab environment</p>
               <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-primary">$60</span>
-                <Link href={`/${locale}/tests/ecg`} className="btn-primary">
+                <span className="text-lg font-bold text-primary">$850</span>
+                <Link href={`/${locale}/tests/sleep-study-lab`} className="btn-primary">
                   {t('tests.bookNow')}
                 </Link>
               </div>
