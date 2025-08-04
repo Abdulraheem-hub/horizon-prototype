@@ -185,6 +185,98 @@
       "contactSupport": "Contact Horizon Support"
     }
   },
+  "lab": {
+    "title": "Horizon Lab Portal",
+    "dashboard": "Lab Dashboard",
+    "description": "Welcome to your lab portal. Manage bookings, upload reports, and communicate with the Horizon team.",
+    "navigation": {
+      "dashboard": "Dashboard",
+      "bookings": "Bookings",
+      "reports": "Reports",
+      "communications": "Communications",
+      "payments": "Payments",
+      "signOut": "Sign Out"
+    },
+    "stats": {
+      "todayBookings": "Today's Bookings",
+      "pendingReports": "Pending Reports",
+      "completedTests": "Completed Tests",
+      "messages": "Messages",
+      "todayBookingsDesc": "Active appointments for today",
+      "pendingReportsDesc": "Reports awaiting upload",
+      "completedTestsDesc": "This month",
+      "messagesDesc": "Pending communications"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "viewBookings": "View Bookings",
+      "viewBookingsDesc": "Manage appointments",
+      "uploadReports": "Upload Reports",
+      "uploadReportsDesc": "Submit test results",
+      "messages": "Messages",
+      "messagesDesc": "Communicate with admin",
+      "paymentReports": "Payment Reports",
+      "paymentReportsDesc": "Financial reconciliation"
+    },
+    "recentBookings": {
+      "title": "Recent Bookings",
+      "patient": "Patient",
+      "testType": "Test Type",
+      "time": "Time",
+      "status": "Status",
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "inProgress": "In Progress"
+    }
+  },
+  "admin": {
+    "title": "Horizon Admin Panel",
+    "dashboard": "Admin Dashboard",
+    "description": "Comprehensive overview of your Horizon platform. Manage bookings, users, labs, and view analytics.",
+    "navigation": {
+      "dashboard": "Dashboard",
+      "bookings": "Bookings",
+      "users": "Users",
+      "labs": "Labs & Tests",
+      "analytics": "Analytics",
+      "reports": "Reports",
+      "signOut": "Sign Out"
+    },
+    "stats": {
+      "totalBookings": "Total Bookings",
+      "activeUsers": "Active Users",
+      "partnerLabs": "Partner Labs",
+      "monthlyRevenue": "Monthly Revenue",
+      "totalBookingsDesc": "All time bookings",
+      "activeUsersDesc": "Registered users",
+      "partnerLabsDesc": "Active laboratory partners",
+      "monthlyRevenueDesc": "Current month earnings"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "manageBookings": "Manage Bookings",
+      "manageBookingsDesc": "Override & control bookings",
+      "userManagement": "User Management",
+      "userManagementDesc": "Manage users & permissions",
+      "labsTests": "Labs & Tests",
+      "labsTestsDesc": "Add/remove labs & tests",
+      "analytics": "Analytics",
+      "analyticsDesc": "View detailed insights",
+      "financialReports": "Financial Reports",
+      "financialReportsDesc": "Download & export data"
+    },
+    "recentActivity": {
+      "title": "Recent Activity"
+    },
+    "popularTests": {
+      "title": "Popular Test Types",
+      "bloodTests": "Blood Tests",
+      "xrays": "X-Rays",
+      "mriScans": "MRI Scans",
+      "ultrasounds": "Ultrasounds",
+      "tests": "tests"
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error",
