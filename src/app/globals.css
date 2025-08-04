@@ -1,21 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F8F9FA;
+  --foreground: #212529;
+  --primary: #71C9CE;
+  --primary-light: #E3F4F4;
+  --primary-dark: #48B0B5;
+  --secondary: #6C757D;
+  --secondary-light: #F8F9FA;
+  --border: #DEE2E6;
+  --border-light: #F1F3F5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #F8F9FA;
+    --foreground: #212529;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* RTL Support for Arabic */
@@ -39,4 +46,59 @@ body {
 [dir="rtl"] input,
 [dir="rtl"] textarea {
   text-align: right;
+}
+
+/* Design System Base Classes */
+.btn-primary {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #212529;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.btn-secondary:hover {
+  background-color: #F1F3F5;
+}
+
+.card {
+  background-color: rgba(240, 245, 248, 0.7);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.input {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 10px 16px;
+  border: 1px solid #DEE2E6;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.input:focus {
+  border-color: #71C9CE;
+  box-shadow: 0 0 0 3px rgba(113, 201, 206, 0.2);
+  outline: none;
 }

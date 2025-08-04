@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import Image from "next/image";
+import Link from 'next/link';
 
 export default function HomePage() {
   const t = useTranslations();
@@ -15,95 +15,172 @@ export default function HomePage() {
   };
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <header className="row-start-1 w-full">
-        <nav className="flex justify-between items-center">
-          <div className="flex gap-6">
-            <a href={`/${locale}`} className="text-blue-600 hover:text-blue-800">
-              {t('navigation.home')}
-            </a>
-            <a href={`/${locale}/about`} className="text-blue-600 hover:text-blue-800">
-              {t('navigation.about')}
-            </a>
-            <a href={`/${locale}/contact`} className="text-blue-600 hover:text-blue-800">
-              {t('navigation.contact')}
-            </a>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+      {/* Navigation */}
+      <nav className="bg-white/50 backdrop-blur-md shadow-sm border-b border-white/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <h1 className="text-2xl font-bold text-gray-900">Horizon</h1>
+              </div>
+              <div className="hidden md:block">
+                <div className="ml-10 flex items-baseline space-x-4">
+                  <Link href={`/${locale}`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
+                    {t('navigation.home')}
+                  </Link>
+                  <Link href={`/${locale}/tests`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
+                    {t('navigation.tests')}
+                  </Link>
+                  <Link href={`/${locale}/about`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
+                    {t('navigation.about')}
+                  </Link>
+                  <Link href={`/${locale}/contact`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
+                    {t('navigation.contact')}
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={toggleLanguage}
+                className="btn-secondary"
+              >
+                {locale === 'en' ? 'العربية' : 'English'}
+              </button>
+              <Link href={`/${locale}/auth/signin`} className="btn-secondary">
+                {t('navigation.signIn')}
+              </Link>
+              <Link href={`/${locale}/auth/signup`} className="btn-primary">
+                {t('navigation.signUp')}
+              </Link>
+            </div>
           </div>
-          <button
-            onClick={toggleLanguage}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-          >
-            {t('content.switchLanguage')} ({locale === 'en' ? 'العربية' : 'English'})
-          </button>
-        </nav>
-      </header>
-
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        
-        <div className="text-center sm:text-left">
-          <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-            {t('description')}
-          </p>
         </div>
+      </nav>
 
-        <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-4">{t('content.welcome')}</h2>
-          <p className="text-gray-700 dark:text-gray-300">
+      {/* Hero Section */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            {t('content.welcome')}
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             {t('content.subtitle')}
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href={`/${locale}/tests`} className="btn-primary text-center">
+              {t('tests.title')}
+            </Link>
+            <Link href={`/${locale}/auth/signup`} className="btn-secondary text-center">
+              {t('navigation.signUp')}
+            </Link>
+          </div>
         </div>
 
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/[locale]/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        {/* Featured Tests */}
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            MVP Diagnostic Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Pulmonary Function Test Card */}
+            <div className="card">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 text-xl">🫁</span>
+                </div>
+                <h3 className="text-xl font-semibold ml-4">Full Pulmonary Function Test</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Comprehensive lung function assessment including spirometry and gas exchange</p>
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-bold text-primary">$180</span>
+                <Link href={`/${locale}/tests/pulmonary-function-test`} className="btn-primary">
+                  {t('tests.bookNow')}
+                </Link>
+              </div>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {/* Sleep Study Home Card */}
+            <div className="card">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                  <span className="text-purple-600 text-xl">🛌</span>
+                </div>
+                <h3 className="text-xl font-semibold ml-4">Sleep Study (Home)</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Home sleep apnea test with portable monitoring equipment</p>
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-bold text-primary">$350</span>
+                <Link href={`/${locale}/tests/sleep-study-home`} className="btn-primary">
+                  {t('tests.bookNow')}
+                </Link>
+              </div>
+            </div>
+
+            {/* Sleep Study In-Lab Card */}
+            <div className="card">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-green-600 text-xl">🏥</span>
+                </div>
+                <h3 className="text-xl font-semibold ml-4">Sleep Study (In-Lab)</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Comprehensive polysomnography in controlled lab environment</p>
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-bold text-primary">$850</span>
+                <Link href={`/${locale}/tests/sleep-study-lab`} className="btn-primary">
+                  {t('tests.bookNow')}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* How it Works */}
+        <div className="mt-20 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <span className="text-primary text-2xl">1</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Browse Tests</h3>
+              <p className="text-gray-600 text-sm">Choose from available medical tests</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <span className="text-primary text-2xl">2</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Book Appointment</h3>
+              <p className="text-gray-600 text-sm">Select location and time</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <span className="text-primary text-2xl">3</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Make Payment</h3>
+              <p className="text-gray-600 text-sm">Secure online payment</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <span className="text-primary text-2xl">4</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Get Results</h3>
+              <p className="text-gray-600 text-sm">Access reports online</p>
+            </div>
+          </div>
         </div>
       </main>
 
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-sm text-gray-500">
-        <p>&copy; 2025 Horizon Prototype. {t('footer.rights')}</p>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8 mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p>&copy; 2025 Horizon Medical Testing Platform. {t('footer.rights')}</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
