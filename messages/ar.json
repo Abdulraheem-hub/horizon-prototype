@@ -1,0 +1,17 @@
+{
+  "title": "مرحباً بكم في هورايزن",
+  "description": "تطبيق Next.js متعدد اللغات",
+  "navigation": {
+    "home": "الرئيسية",
+    "about": "حول",
+    "contact": "اتصل بنا"
+  },
+  "content": {
+    "welcome": "مرحباً بكم في تطبيقنا",
+    "subtitle": "هذا عرض توضيحي لتدويل التطبيق باستخدام Next.js",
+    "switchLanguage": "تغيير اللغة"
+  },
+  "footer": {
+    "rights": "جميع الحقوق محفوظة"
+  }
+}

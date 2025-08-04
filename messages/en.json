@@ -1,0 +1,17 @@
+{
+  "title": "Welcome to Horizon",
+  "description": "A multilingual Next.js application",
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "content": {
+    "welcome": "Welcome to our application",
+    "subtitle": "This is a demo of internationalization with Next.js",
+    "switchLanguage": "Switch Language"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}
