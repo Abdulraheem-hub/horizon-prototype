@@ -7,6 +7,45 @@ import { UserLayout } from '@/components/UserLayout';
 export default function HomePage() {
   const t = useTranslations();
   const locale = useLocale();
+  const tests = [
+    {
+      id: 'pulmonary-function-test',
+      name: 'Full Pulmonary Function Test (PFT)',
+      category: 'Pulmonary',
+      price: 180,
+      duration: '60 minutes',
+      description: 'Comprehensive lung function assessment including spirometry, lung volumes, and gas exchange measurements',
+      preparation: 'Avoid bronchodilators 4-6 hours before test, wear comfortable clothing, avoid heavy meals 2 hours prior',
+      locations: ['Downtown Clinic', 'North Branch'],
+      icon: '🫁',
+      featured: true
+    },
+    {
+      id: 'sleep-study-home',
+      name: 'Sleep Disorder Test (Home)',
+      category: 'Sleep Medicine',
+      price: 350,
+      duration: '8-10 hours (overnight)',
+      description: 'Home sleep apnea test using portable monitoring equipment to diagnose sleep-related breathing disorders',
+      preparation: 'Follow normal sleep routine, avoid alcohol and caffeine, maintain sleep diary for 3 days prior',
+      locations: ['Equipment pickup available at all locations'],
+      icon: '🛌',
+      featured: true
+    },
+    {
+      id: 'sleep-study-lab',
+      name: 'Sleep Disorder Test (In-Lab)',
+      category: 'Sleep Medicine',
+      price: 850,
+      duration: '10-12 hours (overnight)',
+      description: 'Comprehensive polysomnography in controlled lab environment for detailed sleep disorder diagnosis',
+      preparation: 'Bring comfortable sleepwear, avoid naps on test day, follow pre-test instructions packet',
+      locations: ['Downtown Clinic Sleep Center'],
+      icon: '🏥',
+      featured: true
+    }
+    
+  ];
 
   return (
     <UserLayout>
@@ -45,10 +84,13 @@ export default function HomePage() {
               </div>
               <p className="text-gray-600 mb-4">Comprehensive lung function assessment including spirometry and gas exchange</p>
               <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-primary">$180</span>
-                <Link href={`/${locale}/tests/pulmonary-function-test`} className="btn-primary">
-                  {t('tests.bookNow')}
-                </Link>
+                <span className="text-lg font-bold text-primary">&#x20C0; 180</span>
+                <Link 
+                href={`/${locale}/booking/${tests[0].id}`}
+                className="btn-primary text-center"
+              >
+                {t('tests.bookNow')}
+              </Link>
               </div>
             </div>
 
@@ -62,10 +104,13 @@ export default function HomePage() {
               </div>
               <p className="text-gray-600 mb-4">Home sleep apnea test with portable monitoring equipment</p>
               <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-primary">$350</span>
-                <Link href={`/${locale}/tests/sleep-study-home`} className="btn-primary">
-                  {t('tests.bookNow')}
-                </Link>
+                <span className="text-lg font-bold text-primary"><span className="ml-1">{'SAR'.replace('SAR', '\u20C0')}</span> 350</span>
+                <Link 
+                href={`/${locale}/booking/${tests[1].id}`}
+                className="btn-primary text-center"
+              >
+                {t('tests.bookNow')}
+              </Link>
               </div>
             </div>
 
@@ -79,10 +124,13 @@ export default function HomePage() {
               </div>
               <p className="text-gray-600 mb-4">Comprehensive polysomnography in controlled lab environment</p>
               <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-primary">$850</span>
-                <Link href={`/${locale}/tests/sleep-study-lab`} className="btn-primary">
-                  {t('tests.bookNow')}
-                </Link>
+                <span className="text-lg font-bold text-primary"><span className="ml-1">{'SAR'.replace('SAR', '\u20C0')}</span> 850</span>
+                <Link 
+                href={`/${locale}/booking/${tests[2].id}`}
+                className="btn-primary text-center"
+              >
+                {t('tests.bookNow')}
+              </Link>
               </div>
             </div>
           </div>

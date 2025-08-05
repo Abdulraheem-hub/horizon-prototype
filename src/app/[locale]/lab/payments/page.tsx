@@ -97,8 +97,8 @@ export default function LabPayments() {
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'USD'
-    }).format(amount);
+      currency: 'SAR'
+    }).format(amount).replace('SAR', '\u20C0');
   };
 
   return (
