@@ -17,14 +17,14 @@ export default function ContactPage() {
             {locale === 'en' ? (
               <>
                 <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-800 mb-6">
                   We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
                 </p>
               </>
             ) : (
               <>
                 <h2 className="text-2xl font-semibold mb-4">تواصل معنا</h2>
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-800 mb-6">
                   نحن نحب أن نسمع منك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.
                 </p>
               </>
@@ -32,16 +32,16 @@ export default function ContactPage() {
             
             <div className="space-y-4">
               <div>
-                <h3 className="font-semibold">{locale === 'en' ? 'Email' : 'البريد الإلكتروني'}</h3>
-                <p className="text-gray-600 dark:text-gray-400">contact@horizon-prototype.com</p>
+                <h3 className="font-semibold text-gray-900">{locale === 'en' ? 'Email' : 'البريد الإلكتروني'}</h3>
+                <p className="text-gray-700">contact@horizon-prototype.com</p>
               </div>
               <div>
-                <h3 className="font-semibold">{locale === 'en' ? 'Phone' : 'الهاتف'}</h3>
-                <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+                <h3 className="font-semibold text-gray-900">{locale === 'en' ? 'Phone' : 'الهاتف'}</h3>
+                <p className="text-gray-700">+1 (555) 123-4567</p>
               </div>
               <div>
-                <h3 className="font-semibold">{locale === 'en' ? 'Address' : 'العنوان'}</h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <h3 className="font-semibold text-gray-900">{locale === 'en' ? 'Address' : 'العنوان'}</h3>
+                <p className="text-gray-700">
                   {locale === 'en' 
                     ? '123 Tech Street, Digital City, DC 12345' 
                     : '123 شارع التكنولوجيا، المدينة الرقمية، DC 12345'

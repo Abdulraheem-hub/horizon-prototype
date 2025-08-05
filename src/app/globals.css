@@ -123,3 +123,250 @@ body {
   box-shadow: 0 0 0 3px rgba(113, 201, 206, 0.2);
   outline: none;
 }
+
+/* Language Toggle Switch Styles */
+.switch {
+ --button-width: 3.5em;
+ --button-height: 2em;
+ --toggle-diameter: 1.5em;
+ --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+ --toggle-shadow-offset: 10px;
+ --toggle-wider: 3em;
+ --color-grey: #E5E7EB;
+ --color-primary: #71C9CE;
+ direction: ltr !important;
+}
+
+.slider {
+ display: inline-block;
+ width: var(--button-width);
+ height: var(--button-height);
+ background-color: var(--color-grey);
+ border-radius: calc(var(--button-height) / 2);
+ position: relative;
+ transition: 0.3s all ease-in-out;
+ direction: ltr !important;
+}
+
+.slider::after {
+ content: "";
+ display: inline-block;
+ width: var(--toggle-diameter);
+ height: var(--toggle-diameter);
+ background-color: #fff;
+ border-radius: calc(var(--toggle-diameter) / 2);
+ position: absolute;
+ top: var(--button-toggle-offset);
+ transform: translateX(var(--button-toggle-offset));
+ box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+ transition: 0.3s all ease-in-out;
+}
+
+.switch input[type="checkbox"]:checked + .slider {
+ background-color: var(--color-primary);
+}
+
+.switch input[type="checkbox"]:checked + .slider::after {
+ transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+ box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+
+.switch input[type="checkbox"] {
+ display: none;
+}
+
+.switch input[type="checkbox"]:active + .slider::after {
+ width: var(--toggle-wider);
+}
+
+.switch input[type="checkbox"]:checked:active + .slider::after {
+ transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+}
+
+/* Timeline Animations and Styles */
+.timeline-step {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.timeline-step:nth-child(1) { animation-delay: 0.1s; }
+.timeline-step:nth-child(2) { animation-delay: 0.3s; }
+.timeline-step:nth-child(3) { animation-delay: 0.5s; }
+.timeline-step:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Timeline dot pulse animation */
+.timeline-dot {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(113, 201, 206, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(113, 201, 206, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(113, 201, 206, 0);
+  }
+}
+
+/* Gradient timeline line animation */
+.timeline-line {
+  background: linear-gradient(180deg, 
+    #71C9CE 0%, 
+    #48B0B5 25%, 
+    #71C9CE 50%, 
+    #48B0B5 75%, 
+    #71C9CE 100%);
+  background-size: 100% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Timeline card hover effects */
+.timeline-card {
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Icon container animations */
+.timeline-icon {
+  transition: all 0.3s ease;
+}
+
+.timeline-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Mobile timeline adjustments */
+@media (max-width: 768px) {
+  .timeline-step {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .timeline-mobile-number {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Mobile-first timeline layout */
+  .timeline-step .timeline-card {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .timeline-step h3 {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+  
+  .timeline-step p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Mobile icon adjustments */
+  .timeline-icon {
+    width: 4rem !important;
+    height: 4rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-icon svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .timeline-step {
+    padding: 0 0.5rem;
+  }
+  
+  .timeline-card {
+    margin: 0 0.5rem !important;
+    padding: 0.75rem !important;
+    border-radius: 1rem !important;
+  }
+  
+  /* Adjust text sizes for very small screens */
+  .timeline-step h3 {
+    font-size: 1rem;
+  }
+  
+  .timeline-step p {
+    font-size: 0.8125rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .timeline-step {
+    margin-bottom: 3rem;
+  }
+  
+  .timeline-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  
+  .timeline-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+/* Language Toggle Container - Force LTR positioning */
+.language-toggle-container {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.language-toggle-container * {
+  direction: ltr !important;
+}
+
+/* Override RTL spacing for language toggle specifically */
+[dir="rtl"] .language-toggle-container {
+  direction: ltr !important;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .language-toggle-container .flex {
+  flex-direction: row !important;
+}
+
+/* Prevent RTL gap reversing on language toggle */
+[dir="rtl"] .language-toggle-container.gap-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0 !important;
+  margin-right: 0.75rem !important;
+  margin-left: 0 !important;
+}

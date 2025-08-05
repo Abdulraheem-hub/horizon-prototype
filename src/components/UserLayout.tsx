@@ -14,7 +14,7 @@ export function UserLayout({ children }: UserLayoutProps) {
   const locale = useLocale();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50 flex flex-col" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       {/* Navigation */}
       <nav className="bg-white/50 backdrop-blur-md shadow-sm border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export function UserLayout({ children }: UserLayoutProps) {
       </nav>
 
       {/* Main Content */}
-      <main>
+      <main className="flex-grow">
         {children}
       </main>
 
