@@ -1,44 +1,15 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { UserLayout } from '@/components/UserLayout';
 
 export default function ContactPage() {
   const t = useTranslations();
   const locale = useLocale();
-  const router = useRouter();
-
-  const toggleLanguage = () => {
-    const newLocale = locale === 'en' ? 'ar' : 'en';
-    router.push(`/${newLocale}/contact`);
-  };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <header className="mb-8">
-        <nav className="flex justify-between items-center">
-          <div className="flex gap-6">
-            <Link href={`/${locale}`} className="text-blue-600 hover:text-blue-800">
-              {t('navigation.home')}
-            </Link>
-            <Link href={`/${locale}/about`} className="text-blue-600 hover:text-blue-800">
-              {t('navigation.about')}
-            </Link>
-            <Link href={`/${locale}/contact`} className="text-blue-600 hover:text-blue-800 font-bold">
-              {t('navigation.contact')}
-            </Link>
-          </div>
-          <button
-            onClick={toggleLanguage}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-          >
-            {t('content.switchLanguage')} ({locale === 'en' ? 'العربية' : 'English'})
-          </button>
-        </nav>
-      </header>
-
-      <main className="max-w-4xl mx-auto">
+    <UserLayout>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold mb-8">{t('navigation.contact')}</h1>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -88,7 +59,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                  className="input w-full"
                   placeholder={locale === 'en' ? 'Your name' : 'اسمك'}
                 />
               </div>
@@ -98,7 +69,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                  className="input w-full"
                   placeholder={locale === 'en' ? 'your@email.com' : 'email@example.com'}
                 />
               </div>
@@ -108,20 +79,20 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                  className="input w-full resize-none"
                   placeholder={locale === 'en' ? 'Your message...' : 'رسالتك...'}
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
+                className="btn-primary w-full"
               >
                 {locale === 'en' ? 'Send Message' : 'إرسال الرسالة'}
               </button>
             </form>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </UserLayout>
   );
 }
