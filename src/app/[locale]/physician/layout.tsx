@@ -2,6 +2,8 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import { Footer } from '@/components/Footer';
+import { LanguageToggle } from '@/components/LanguageToggle';
 
 interface PhysicianLayoutProps {
   children: React.ReactNode;
@@ -42,6 +44,7 @@ export default function PhysicianLayout({ children }: PhysicianLayoutProps) {
             </div>
             
             <div className="flex items-center space-x-4">
+              <LanguageToggle />
               <Link href={`/${locale}`} className="btn-secondary">
                 {t('physician.navigation.backToMain')}
               </Link>
@@ -59,13 +62,7 @@ export default function PhysicianLayout({ children }: PhysicianLayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p>&copy; 2025 Horizon Medical Testing Platform - Physician Portal. {t('footer.rights')}</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
