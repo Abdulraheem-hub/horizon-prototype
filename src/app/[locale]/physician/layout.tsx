@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 interface PhysicianLayoutProps {
@@ -11,12 +10,6 @@ interface PhysicianLayoutProps {
 export default function PhysicianLayout({ children }: PhysicianLayoutProps) {
   const t = useTranslations();
   const locale = useLocale();
-  const router = useRouter();
-
-  const toggleLanguage = () => {
-    const newLocale = locale === 'en' ? 'ar' : 'en';
-    router.push(`/${newLocale}/physician`);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
@@ -49,12 +42,6 @@ export default function PhysicianLayout({ children }: PhysicianLayoutProps) {
             </div>
             
             <div className="flex items-center space-x-4">
-              <button
-                onClick={toggleLanguage}
-                className="btn-secondary"
-              >
-                {locale === 'en' ? 'العربية' : 'English'}
-              </button>
               <Link href={`/${locale}`} className="btn-secondary">
                 {t('physician.navigation.backToMain')}
               </Link>

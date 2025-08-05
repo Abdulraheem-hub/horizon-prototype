@@ -1,76 +1,17 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { UserLayout } from '@/components/UserLayout';
 
 export default function HomePage() {
   const t = useTranslations();
   const locale = useLocale();
-  const router = useRouter();
-
-  const toggleLanguage = () => {
-    const newLocale = locale === 'en' ? 'ar' : 'en';
-    router.push(`/${newLocale}`);
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      {/* Navigation */}
-      <nav className="bg-white/50 backdrop-blur-md shadow-sm border-b border-white/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-gray-900">Horizon</h1>
-              </div>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  <Link href={`/${locale}`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
-                    {t('navigation.home')}
-                  </Link>
-                  <Link href={`/${locale}/tests`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
-                    {t('navigation.tests')}
-                  </Link>
-                  <Link href={`/${locale}/about`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
-                    {t('navigation.about')}
-                  </Link>
-                  <Link href={`/${locale}/contact`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
-                    {t('navigation.contact')}
-                  </Link>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={toggleLanguage}
-                className="btn-secondary"
-              >
-                {locale === 'en' ? 'العربية' : 'English'}
-              </button>
-              <Link href={`/${locale}/physician/signin`} className="btn-secondary">
-                Physician Portal
-              </Link>
-              <Link href={`/${locale}/lab/signin`} className="btn-secondary">
-                Lab Portal
-              </Link>
-              <Link href={`/${locale}/admin/signin`} className="btn-secondary">
-                Admin Portal
-              </Link>
-              <Link href={`/${locale}/auth/signin`} className="btn-secondary">
-                {t('navigation.signIn')}
-              </Link>
-              <Link href={`/${locale}/auth/signup`} className="btn-primary">
-                {t('navigation.signUp')}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+    <UserLayout>
       {/* Hero Section */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             {t('content.welcome')}
@@ -181,16 +122,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p>&copy; 2025 Horizon Medical Testing Platform. {t('footer.rights')}</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+      </div>
+    </UserLayout>
   );
 }
