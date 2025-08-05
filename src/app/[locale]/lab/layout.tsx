@@ -3,6 +3,8 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import Link from "next/link";
 import type { Metadata } from "next";
 import { MobileMenu } from '@/components/MobileMenu';
+import { Footer } from '@/components/Footer';
+import { LanguageToggle } from '@/components/LanguageToggle';
 
 export const metadata: Metadata = {
   title: "Lab Portal - Horizon",
@@ -65,6 +67,7 @@ export default async function LabLayout({
               >
                 {t('navigation.payments')}
               </Link>
+              <LanguageToggle />
               <Link 
                 href={`/${locale}/lab/signin`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
@@ -104,6 +107,9 @@ export default async function LabLayout({
               >
                 {t('navigation.payments')}
               </Link>
+              <div className="px-3 py-2">
+                <LanguageToggle />
+              </div>
               <Link 
                 href={`/${locale}/lab/signin`} 
                 className="text-gray-600 hover:text-[#71C9CE] block px-3 py-2 text-base font-medium"
@@ -121,6 +127,11 @@ export default async function LabLayout({
           {children}
         </NextIntlClientProvider>
       </main>
+
+      {/* Footer */}
+      <NextIntlClientProvider messages={messages}>
+        <Footer />
+      </NextIntlClientProvider>
     </div>
   );
 }
