@@ -1,0 +1,61 @@
+{
+  "title": "Bienvenue sur Horizon",
+  "description": "Une plateforme de tests médicaux multilingue",
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "tests": "Tests",
+    "appointments": "Rendez-vous",
+    "profile": "Profil",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "signOut": "Se déconnecter"
+  },
+  "content": {
+    "welcome": "Bienvenue dans notre application",
+    "subtitle": "Plateforme de Tests Médicaux Horizon",
+    "switchLanguage": "Changer de Langue"
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signUp": "Créer un Nouveau Compte",
+    "email": "Adresse Email",
+    "phone": "Numéro de Téléphone",
+    "password": "Mot de Passe",
+    "confirmPassword": "Confirmer le Mot de Passe",
+    "fullName": "Nom Complet",
+    "sendOTP": "Envoyer Code de Vérification",
+    "enterOTP": "Entrez le Code de Vérification",
+    "verifyOTP": "Vérifier le Code",
+    "otpSent": "Code de vérification envoyé",
+    "invalidOTP": "Code de vérification invalide",
+    "resendOTP": "Renvoyer le Code",
+    "forgotPassword": "Mot de passe oublié ?",
+    "rememberMe": "Se souvenir de moi",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "dontHaveAccount": "Vous n'avez pas de compte ?"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "finish": "Terminer",
+    "close": "Fermer",
+    "yes": "Oui",
+    "no": "Non",
+    "required": "Requis",
+    "optional": "Optionnel"
+  }
+}
