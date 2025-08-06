@@ -1,0 +1,61 @@
+{
+  "title": "Bienvenido a Horizon",
+  "description": "Una plataforma de pruebas médicas multilingüe",
+  "navigation": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "tests": "Pruebas",
+    "appointments": "Citas",
+    "profile": "Perfil",
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "signOut": "Cerrar Sesión"
+  },
+  "content": {
+    "welcome": "Bienvenido a nuestra aplicación",
+    "subtitle": "Plataforma de Pruebas Médicas Horizon",
+    "switchLanguage": "Cambiar Idioma"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados"
+  },
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Crear Nueva Cuenta",
+    "email": "Dirección de Correo",
+    "phone": "Número de Teléfono",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "fullName": "Nombre Completo",
+    "sendOTP": "Enviar Código de Verificación",
+    "enterOTP": "Ingrese Código de Verificación",
+    "verifyOTP": "Verificar Código",
+    "otpSent": "Código de verificación enviado",
+    "invalidOTP": "Código de verificación inválido",
+    "resendOTP": "Reenviar Código",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "rememberMe": "Recordarme",
+    "alreadyHaveAccount": "¿Ya tiene una cuenta?",
+    "dontHaveAccount": "¿No tiene una cuenta?"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "finish": "Finalizar",
+    "close": "Cerrar",
+    "yes": "Sí",
+    "no": "No",
+    "required": "Requerido",
+    "optional": "Opcional"
+  }
+}
