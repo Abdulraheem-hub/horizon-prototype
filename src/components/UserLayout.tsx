@@ -34,18 +34,11 @@ export function UserLayout({ children }: UserLayoutProps) {
                   <Link href={`/${locale}/tests`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
                     {t('navigation.tests')}
                   </Link>
-                  <Link href={`/${locale}/about`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
-                    {t('navigation.about')}
-                  </Link>
-                  <Link href={`/${locale}/contact`} className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">
-                    {t('navigation.contact')}
-                  </Link>
                 </div>
               </div>
             </div>
             
             <div className="flex items-center space-x-4">
-              <LanguageToggle />
               <div className="hidden md:flex items-center space-x-4">
                 <Link href={`/${locale}/auth/signin`} className="btn-secondary">
                   {t('navigation.signIn')}
@@ -53,6 +46,7 @@ export function UserLayout({ children }: UserLayoutProps) {
                 <Link href={`/${locale}/auth/signup`} className="btn-primary">
                   {t('navigation.signUp')}
                 </Link>
+              <LanguageToggle />
               </div>
               <MobileMenu>
                 <Link href={`/${locale}`} className="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">
@@ -68,13 +62,11 @@ export function UserLayout({ children }: UserLayoutProps) {
                   {t('navigation.contact')}
                 </Link>
                 <div className="pt-4 pb-3 border-t border-gray-200">
-                  <div className="flex items-center px-3 space-y-2">
-                    <Link href={`/${locale}/auth/signin`} className="btn-secondary w-full text-center block">
+                  <div className="flex space-x-3 px-3">
+                    <Link href={`/${locale}/auth/signin`} className="btn-secondary flex-1 text-center">
                       {t('navigation.signIn')}
                     </Link>
-                  </div>
-                  <div className="mt-3 px-3">
-                    <Link href={`/${locale}/auth/signup`} className="btn-primary w-full text-center block">
+                    <Link href={`/${locale}/auth/signup`} className="btn-primary flex-1 text-center">
                       {t('navigation.signUp')}
                     </Link>
                   </div>
@@ -86,7 +78,7 @@ export function UserLayout({ children }: UserLayoutProps) {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-grow">
+      <main className="flex-1">
         {children}
       </main>
 

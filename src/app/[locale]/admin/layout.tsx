@@ -25,7 +25,7 @@ export default async function AdminLayout({
   const t = await getTranslations('admin');
 
   return (
-    <div className="min-h-screen bg-gray-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-gray-50 flex flex-col" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       {/* Admin Navigation Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,7 +134,7 @@ export default async function AdminLayout({
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <main className="flex-1 max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

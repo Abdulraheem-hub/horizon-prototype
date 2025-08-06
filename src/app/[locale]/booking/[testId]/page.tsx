@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
+import { Footer } from '@/components/Footer';
 
 export default function BookingPage() {
   const t = useTranslations();
@@ -97,7 +98,7 @@ export default function BookingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50 flex flex-col" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       {/* Navigation */}
       <nav className="bg-white/50 backdrop-blur-md shadow-sm border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,7 +115,7 @@ export default function BookingPage() {
         </div>
       </nav>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
@@ -133,14 +134,18 @@ export default function BookingPage() {
           <div className="flex items-center space-x-4">
             {[1, 2, 3].map((step) => (
               <div key={step} className="flex items-center">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
-                  step <= currentStep ? 'bg-primary text-white' : 'bg-gray-200 text-gray-600'
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${
+                  step < currentStep
+                    ? 'bg-emerald-500 text-white shadow-md border-2 border-emerald-500' // Completed steps - emerald green
+                    : step === currentStep 
+                    ? 'bg-indigo-600 text-white shadow-lg border-2 border-indigo-600 ring-2 ring-indigo-300/50' // Current step - indigo blue
+                    : 'bg-gray-100 border-2 border-gray-300 text-gray-700 shadow-sm hover:bg-gray-50 transition-colors' // Future steps
                 }`}>
-                  {step}
+                  {step < currentStep ? '✓' : step}
                 </div>
                 {step < 3 && (
                   <div className={`w-12 h-1 ${
-                    step < currentStep ? 'bg-primary' : 'bg-gray-200'
+                    step < currentStep ? 'bg-emerald-500' : 'bg-gray-300'
                   }`} />
                 )}
               </div>
@@ -195,10 +200,10 @@ export default function BookingPage() {
                     {timeSlots.map((time) => (
                       <button
                         key={time}
-                        className={`p-2 text-sm border rounded ${
+                        className={`p-2 text-sm border rounded transition-colors ${
                           bookingData.time === time
-                            ? 'border-primary bg-primary text-white'
-                            : 'border-gray-200 hover:border-gray-300'
+                            ? 'border-purple-500 bg-purple-100 text-purple-700 shadow-sm'
+                            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                         }`}
                         onClick={() => setBookingData({...bookingData, time})}
                       >
@@ -368,6 +373,9 @@ export default function BookingPage() {
           </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

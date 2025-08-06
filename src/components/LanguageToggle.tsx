@@ -49,7 +49,7 @@ export function LanguageToggle({ className }: LanguageToggleProps) {
           locale === 'ar' ? "text-[#71C9CE]" : "text-gray-500"
         )}
       >
-        AR
+        عربي
       </span>
     </div>
   );

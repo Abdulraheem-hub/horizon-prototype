@@ -25,7 +25,7 @@ export default async function LabLayout({
   const t = await getTranslations('lab');
 
   return (
-    <div className="min-h-screen bg-gray-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-gray-50 flex flex-col" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       {/* Lab Navigation Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,13 +67,13 @@ export default async function LabLayout({
               >
                 {t('navigation.payments')}
               </Link>
-              <LanguageToggle />
               <Link 
                 href={`/${locale}/lab/signin`} 
                 className="text-gray-600 hover:text-[#71C9CE] px-3 py-2 text-sm font-medium"
               >
                 {t('navigation.signOut')}
               </Link>
+              <LanguageToggle />
             </nav>
             
             <MobileMenu>
