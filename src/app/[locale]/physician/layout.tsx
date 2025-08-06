@@ -3,7 +3,6 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Footer } from '@/components/Footer';
-import { LanguageToggle } from '@/components/LanguageToggle';
 
 interface PhysicianLayoutProps {
   children: React.ReactNode;
@@ -50,7 +49,6 @@ export default function PhysicianLayout({ children }: PhysicianLayoutProps) {
               <Link href={`/${locale}/physician/signin`} className="btn-primary">
                 {t('physician.navigation.signOut')}
               </Link>
-              <LanguageToggle />
             </div>
           </div>
         </div>
