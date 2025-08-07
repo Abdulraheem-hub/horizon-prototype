@@ -53,8 +53,8 @@ export function MobileMenu({ children }: MobileMenuProps) {
       </div>
       
       {/* Mobile Navigation */}
-      <div className={`fixed top-16 left-0 right-0 z-[9999] md:hidden ${isOpen ? 'block' : 'hidden'}`} id="mobile-menu">
-        <div className="bg-white/95 backdrop-blur-md shadow-lg border-b border-white/20">
+      <div className={`fixed top-16 left-0 right-0 z-[999999] md:hidden ${isOpen ? 'block' : 'hidden'}`} id="mobile-menu">
+        <div className="bg-white shadow-lg border-b border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {children}
           </div>

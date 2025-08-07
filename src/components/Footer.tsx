@@ -27,19 +27,19 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4">Portals</h4>
             <div className="space-y-2">
               <Link 
-                href={`/${locale}/physician/signin`} 
+                href={`/${locale}/physician/dashboard`} 
                 className="block text-gray-300 hover:text-white transition-colors"
               >
                 Physician Portal
               </Link>
               <Link 
-                href={`/${locale}/lab/signin`} 
+                href={`/${locale}/lab`} 
                 className="block text-gray-300 hover:text-white transition-colors"
               >
                 Lab Portal
               </Link>
               <Link 
-                href={`/${locale}/admin/signin`} 
+                href={`/${locale}/admin`} 
                 className="block text-gray-300 hover:text-white transition-colors"
               >
                 Admin Portal

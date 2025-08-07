@@ -69,6 +69,24 @@ body {
   display: block !important;
 }
 
+/* Ensure mobile menu is always on top */
+#mobile-menu {
+  z-index: 999999 !important;
+  position: fixed !important;
+}
+
+/* Ensure mobile menu content is also on top */
+#mobile-menu > * {
+  z-index: 999999 !important;
+  position: relative !important;
+}
+
+/* Force mobile menu to be above everything */
+[id="mobile-menu"] {
+  z-index: 999999 !important;
+  position: fixed !important;
+}
+
 /* Design System Base Classes */
 .btn-primary {
   background-color: #000000;
@@ -101,12 +119,11 @@ body {
 }
 
 .card {
-  background-color: rgba(240, 245, 248, 0.7);
+  background-color: rgba(240, 245, 248, 0.9);
   border-radius: 24px;
   padding: 24px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
 }
 
 .input {
